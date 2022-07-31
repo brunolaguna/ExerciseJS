@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX07 - JS</title>
+</head>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    button {
+        width: 200px;
+        height: 100px;
+        font-size: larger;
+    }
+</style>
+<body>
+    <h1>Student average v1.0</h1>
+    <button onclick="average()">Calculate average</button>
+    <section id="result"><p>The result will appear here...</p></section>
+    <script>
+        function average() {
+            var name = prompt("What is the student's name?")
+            while(!isNaN(name)) {
+                alert('You entered a wrong value!')
+                var name = prompt("What is the student's name?") 
+            }
+            var n1 = Number(window.prompt(`What was ${name}'s first note?`))
+            while(isNaN(n1)) {
+                alert('You entered a wrong value!')                
+                var n1 = Number(window.prompt(`What was ${name}'s first note?`)) 
+            }
+
+            var n2 = Number(window.prompt(`Besides 10, what was ${name}'s other score?`))
+            while(isNaN(n2)) {
+                alert('You entered a wrong value!')                
+                var n2 = Number(window.prompt(`Besides 10, what was ${name}'s other score?`))
+            }
+
+            let res = document.getElementById('result')
+            res.innerHTML = `<p>Calculating <mark>${name}'s</mark> final average.</p>
+                             <p>The scores obtained were <mark>${n1} and ${n2}</mark>.</p>
+                             <p>The final average will be <mark>${(n1 + n2) / 2}</mark>.</p>
+            `
+        }
+    </script>
+</body>
+</html>

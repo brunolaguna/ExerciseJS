@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX09 - JS</title>
+</head>
+<style>
+    body {
+        display: flexbox;
+        margin-left: 10px;
+    }
+    
+    button {
+        height: 100px;
+        width: 200px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: x-large;
+    }
+    </style>
+<body>
+    <h1 style="font-family: fantasy;">Click counter</h1>
+    <button onclick="count()">Click me!</button>
+    <button onclick="clear()">reset the counter</button>
+    <section id="text"><p>o</p></section>
+    <script>
+        var plus = 0
+        var p = document.getElementById('text')
+
+        function count() {
+            plus ++
+            p.innerHTML = `<p>The counter is ${plus} clicks away.</p>`
+        }
+        function clear() {
+            plus = 0
+            p.innerHTML = null
+        }
+    </script>
+</body>
+</html>
